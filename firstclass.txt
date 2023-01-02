@@ -1,0 +1,46 @@
+// create folder - open it in VSc, in terminal type - npm init, enter enter .... finally press y
+// npm install express (package.json are created) 
+// create index.js file .. bcz  in package.json -"main": "index.js"
+// type code in index.js.... to start , node index.js
+
+const express = require("express")   // express its package, we use npm install express. so we requireing that
+const cors = require("cors")
+const app = express()                 // initiating,stored in a variable
+
+//use means - Midleware
+app.use(cors({
+    origin : "http://localhost:3000"
+}))
+
+app.use(express.json()); // if we removed this line , req.body not works
+
+let products = [
+    {
+        name : "iphone",
+        price : 40000
+    },
+    {
+        name : "iwatch",
+        price : 50000
+    }
+]
+
+app.get("/products",(req,res)=>{
+    res.json(products)
+})
+app.get("/dashboard",(req,res)=>{
+    res.json({message : "welcome to Dashboard"})
+})
+app.get("/service",(req,res)=>{
+    res.json({message : "services we provide"})
+})
+
+app.post("/create-product",(req,res)=>{
+    // console.log(req.body)
+    products.push(req.body)
+    res.json({message: "product added successfully"})
+});
+
+
+
+app.listen(3006) //listening it

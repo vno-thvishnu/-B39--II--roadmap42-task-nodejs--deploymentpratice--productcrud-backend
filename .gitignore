@@ -1,8 +1,8 @@
 node_modules
 .env
-Backup.txt
-firstclass.txt
-second class.txt
-third.txt
+Backup
+firstclass
+second class
+third
 
-key.txt
+key

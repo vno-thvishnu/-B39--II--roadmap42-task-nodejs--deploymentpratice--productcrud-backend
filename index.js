@@ -17,7 +17,8 @@ const JWT_SECRET = process.env.JWT_SECRET;
 //use means - Midleware
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    // origin: "http://localhost:3000",
+    origin: "https://elegant-pie-c125eb.netlify.app",
   })
 );
 

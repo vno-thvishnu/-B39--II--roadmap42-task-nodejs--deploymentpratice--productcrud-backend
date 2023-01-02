@@ -18,7 +18,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 app.use(
   cors({
     // origin: "http://localhost:3000",
-    origin: "https://63b2be428de82e4ebf3da230--elegant-pie-c125eb.netlify.app",
+    origin: "https://elegant-pie-c125eb.netlify.app",
   })
 );
 
